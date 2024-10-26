@@ -47,3 +47,30 @@
 
 ------
 
+### 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
+
+1. Включаю Ingress-controller в MicroK8S. Проверю его состояние:
+
+![image](https://github.com/user-attachments/assets/51376222-0347-4512-9c9a-b6d0d712c70c)
+
+Ingress-controller запущен.
+
+2. Пишу манифест Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
+
+Применю манифест и проверю результат:
+
+![image](https://github.com/user-attachments/assets/81d01aae-c99e-4866-a8ae-71ad98005c7e)
+
+Ingress создан.
+
+3. Для проверки доступа с помощью браузера или `curl` с локального компьютера, добавлю в DNS соответствующую запись так, чтобы примененный в Ingress адрес myingress.com ссылался на IP адрес кластера MicroK8S.
+
+Проверяю доступ к приложениям через Ingress с локального компьютера и через браузер с внешнего:
+
+![image](https://github.com/user-attachments/assets/da7d8b9d-aec5-4140-93b0-7e4ef7de0abe)
+![image](https://github.com/user-attachments/assets/75d29668-7df2-4da1-9ed2-27e2b1263893)
+![image](https://github.com/user-attachments/assets/82b74554-754d-43ff-824d-b1fd776e52ff)
+
+При обращении к http://172.19.211.199 - получаю ответ от Nginx, при обращении к http://172.19.211.199/api получаю ответ от Multitool.
+
+4. [Манифест Ingress](https://github.com/PatKolzin/kuber-1.5/blob/main/src/ingress.yaml)
