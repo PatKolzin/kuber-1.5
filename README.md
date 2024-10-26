@@ -41,9 +41,9 @@
 
 Приложения видят друг друга.
 
-5. [Манифест Deployment c frontend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy-front.yaml)
+5. [Манифест Deployment c frontend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/front-deploy.yaml)
 
-   [Манифест Deployment c backend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy-back.yaml)
+   [Манифест Deployment c backend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/back-deploy.yaml)
 
 ------
 
