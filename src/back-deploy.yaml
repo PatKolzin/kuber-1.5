@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: network2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multi-back
+  template:
+    metadata:
+      labels:
+        app: multi-back
+    spec:
+      containers:
+        - image: wbitt/network-multitool
+          name: multitool
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-backend
+  namespace: network2
+spec:
+  ports:
+    - name: multi-web
+      port: 80
+  selector:
+    app: multi-back
