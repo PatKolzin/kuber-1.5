@@ -24,38 +24,26 @@
 
 ### Задание 1. Создать Deployment приложений backend и frontend
 
-1. Для выполнения задания создам отдельный Namespace. Пишу манифест Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт:
+1. Для выполнения задания создаю отдельный Namespace. Пишу манифест Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт и Service для него, а также пишу манифест Deployment приложения _backend_ из образа multitool и Service для него, применяю созданные манифесты:
 
-```
-pat@olZion:~/kuber/1_5$ kubectl create namespace network2
-namespace/network2 created
-```
-
-2. Пишу манифест Deployment приложения _backend_ из образа multitool:
-
-![3](https://github.com/user-attachments/assets/c0338ee4-93c8-4aa5-a4cc-ef35011c6d1a)
+![image](https://github.com/user-attachments/assets/7d07cb28-10eb-4751-8106-cbd25abb2e87)
 
 Проверю созданные поды:
 
-![4](https://github.com/user-attachments/assets/1f7ad226-8feb-415a-847d-f5e530bbe037)
+![image](https://github.com/user-attachments/assets/9ebce3cf-a00a-45c8-829b-b5d4c48e1f3b)
+
 
 Поды созданы, количество реплик соответствуют заданию.
 
-3. Пишу манифест Service, который обеспечит доступ к обоим приложениям внутри кластера:
+3. Используя curl, проверю, видят ли приложения друг друга через созданные сервисы из подов frontend'а и backend'а:
 
-![6](https://github.com/user-attachments/assets/66109f73-039e-4760-a757-21f751ad245f)
-
-4. Используя curl, проверю, видят ли приложения друг друга через созданный сервис из пода backend:
-
-![7](https://github.com/user-attachments/assets/afdda067-27f2-464a-8d8e-59d574952c7a)
+![image](https://github.com/user-attachments/assets/8ae48ec6-cb60-423f-aa1e-a00ed9c1e13f)
 
 Приложения видят друг друга.
 
-5. [Манифест Deployment c frontend](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy_front.yaml)
+5. [Манифест Deployment c frontend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy-front.yaml)
 
-   [Манифест Deployment c backend](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy_back.yaml)
-
-   [Манифест Service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/service.yaml)
+   [Манифест Deployment c backend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/deploy-back.yaml)
 
 ------
 
