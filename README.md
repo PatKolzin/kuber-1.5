@@ -41,9 +41,9 @@
 
 Приложения видят друг друга.
 
-5. [Манифест Deployment c frontend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/front-deploy.yaml)
+5. Манифест - [Deployment c frontend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/front-deploy.yaml)
 
-   [Манифест Deployment c backend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/back-deploy.yaml)
+   Манифест - [Deployment c backend и service](https://github.com/PatKolzin/kuber-1.5/blob/main/src/back-deploy.yaml)
 
 ------
 
@@ -65,7 +65,7 @@ Ingress создан.
 
 3. Для проверки доступа с помощью браузера или `curl` с локального компьютера, добавлю в DNS соответствующую запись так, чтобы примененный в Ingress адрес myingress.com ссылался на IP адрес кластера MicroK8S.
 
-Проверяю доступ к приложениям через Ingress с локального компьютера и через браузер с внешнего:
+Проверяю доступ к приложениям через Ingress с помощью браузера или `curl` с локального компьютера:
 
 ![image](https://github.com/user-attachments/assets/da7d8b9d-aec5-4140-93b0-7e4ef7de0abe)
 ![image](https://github.com/user-attachments/assets/75d29668-7df2-4da1-9ed2-27e2b1263893)
@@ -73,4 +73,4 @@ Ingress создан.
 
 При обращении к http://172.19.211.199 - получаю ответ от Nginx, при обращении к http://172.19.211.199/api получаю ответ от Multitool.
 
-4. [Манифест Ingress](https://github.com/PatKolzin/kuber-1.5/blob/main/src/ingress.yaml)
+4. Манифест - [Ingress](https://github.com/PatKolzin/kuber-1.5/blob/main/src/ingress.yaml)
