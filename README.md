@@ -26,7 +26,10 @@
 
 1. Для выполнения задания создам отдельный Namespace. Пишу манифест Deployment приложения _frontend_ из образа nginx с количеством реплик 3 шт:
 
-![2](https://github.com/user-attachments/assets/6b07818d-877e-49a9-bdf5-09767a19e476)
+```
+pat@olZion:~/kuber/1_5$ kubectl create namespace network2
+namespace/network2 created
+```
 
 2. Пишу манифест Deployment приложения _backend_ из образа multitool:
 
